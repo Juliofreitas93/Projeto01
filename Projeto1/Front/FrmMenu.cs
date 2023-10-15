@@ -24,6 +24,11 @@ namespace Projeto1
                 frm.ShowDialog();
             this.Hide();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

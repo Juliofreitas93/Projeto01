@@ -80,7 +80,7 @@ namespace Projeto1
             var id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
             using (var frm = new FrmCadastroProduto(id, "v"))
                 frm.ShowDialog();
-        }      
+        }
 
         private void DeltoolStripButton1_Click(object sender, EventArgs e)
         {
@@ -93,6 +93,13 @@ namespace Projeto1
                                             in context.Estoque
                                             select Estoque).ToList();
             }
+        }
+
+        private void ReturntoolStripButton1_Click(object sender, EventArgs e)
+        {
+            FrmMenu frmMenu = new FrmMenu();
+            frmMenu.Show();
+            this.Close();
         }
     }
 }

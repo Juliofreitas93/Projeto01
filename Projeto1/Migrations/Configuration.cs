@@ -4,16 +4,15 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using Projeto1.ConnectionDB;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Projeto1.ConnectionDB.DataContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(DataContext context)
+        protected override void Seed(Projeto1.ConnectionDB.DataContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -1,6 +1,5 @@
 ﻿using Projeto1.Back;
 using Projeto1.ConnectionDB;
-using Projeto1.Migrations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,9 +16,7 @@ namespace Projeto1
     {
         public frmUser(int id)
         {
-            InitializeComponent();
-            if (id != 0)
-                ObterProduto(id);
+            InitializeComponent();          
 
             Department();
 
@@ -46,28 +43,7 @@ namespace Projeto1
 
 
         }
-        public void ObterProduto(int id)
-        {
-            txtId.Text = id.ToString();
-
-            try
-            {
-                using (var context = new DataContext())
-                {
-
-                    var User = context.Users.Find(id);
-                    if (User != null)
-                    {
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha a conectar.\n" + ex.Message);
-
-            }
-        }
-
+    
         private void bntRegister_Click(object sender, EventArgs e)
         {
             if (Salvar())

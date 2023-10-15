@@ -39,6 +39,7 @@
             toolStripSeparator4 = new ToolStripSeparator();
             ConsultToolStripButton3 = new ToolStripButton();
             DeltoolStripButton1 = new ToolStripButton();
+            ReturntoolStripButton1 = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -48,18 +49,18 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 95);
+            dataGridView1.Location = new Point(12, 28);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(657, 319);
+            dataGridView1.Size = new Size(1041, 456);
             dataGridView1.TabIndex = 0;
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { AddToolStripButton, toolStripSeparator1, toolStripSeparator2, AlterToolStripButton2, toolStripSeparator3, toolStripSeparator4, ConsultToolStripButton3, DeltoolStripButton1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { AddToolStripButton, toolStripSeparator1, toolStripSeparator2, AlterToolStripButton2, toolStripSeparator3, toolStripSeparator4, ConsultToolStripButton3, DeltoolStripButton1, ReturntoolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(800, 25);
+            toolStrip1.Size = new Size(1065, 25);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -119,12 +120,22 @@
             DeltoolStripButton1.Text = "Excluir";
             DeltoolStripButton1.Click += DeltoolStripButton1_Click;
             // 
+            // ReturntoolStripButton1
+            // 
+            ReturntoolStripButton1.Alignment = ToolStripItemAlignment.Right;
+            ReturntoolStripButton1.Image = (Image)resources.GetObject("ReturntoolStripButton1.Image");
+            ReturntoolStripButton1.ImageTransparentColor = Color.Magenta;
+            ReturntoolStripButton1.Name = "ReturntoolStripButton1";
+            ReturntoolStripButton1.Size = new Size(57, 22);
+            ReturntoolStripButton1.Text = "Voltar";
+            ReturntoolStripButton1.Click += ReturntoolStripButton1_Click;
+            // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1065, 496);
             Controls.Add(toolStrip1);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -132,7 +143,7 @@
             Name = "FrmEstoque";
             ShowIcon = false;
             ShowInTaskbar = false;
-            StartPosition = FormStartPosition.WindowsDefaultBounds;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             toolStrip1.ResumeLayout(false);
@@ -153,5 +164,6 @@
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripButton ConsultToolStripButton3;
         private ToolStripButton DeltoolStripButton1;
+        private ToolStripButton ReturntoolStripButton1;
     }
 }

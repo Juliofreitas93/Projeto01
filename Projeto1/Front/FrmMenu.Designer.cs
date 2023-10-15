@@ -30,11 +30,13 @@
         {
             btnEstoque = new Button();
             btnReport = new Button();
+            btnClose = new Button();
             SuspendLayout();
             // 
             // btnEstoque
             // 
-            btnEstoque.Location = new Point(31, 70);
+            btnEstoque.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEstoque.Location = new Point(31, 93);
             btnEstoque.Name = "btnEstoque";
             btnEstoque.Size = new Size(194, 79);
             btnEstoque.TabIndex = 0;
@@ -44,7 +46,8 @@
             // 
             // btnReport
             // 
-            btnReport.Location = new Point(31, 179);
+            btnReport.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReport.Location = new Point(31, 213);
             btnReport.Name = "btnReport";
             btnReport.Size = new Size(194, 79);
             btnReport.TabIndex = 1;
@@ -52,22 +55,42 @@
             btnReport.UseVisualStyleBackColor = true;
             btnReport.Click += btnReport_Click;
             // 
+            // btnClose
+            // 
+            btnClose.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnClose.AutoSize = true;
+            btnClose.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClose.ForeColor = SystemColors.ControlText;
+            btnClose.ImageAlign = ContentAlignment.BottomRight;
+            btnClose.Location = new Point(1122, 639);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(86, 45);
+            btnClose.TabIndex = 2;
+            btnClose.Text = "Sair";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
+            // 
             // FrmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            AutoSize = true;
+            AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            ClientSize = new Size(1220, 696);
+            Controls.Add(btnClose);
             Controls.Add(btnReport);
             Controls.Add(btnEstoque);
             Name = "FrmMenu";
             Text = "Menu Inicial";
             WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnEstoque;
         private Button btnReport;
+        private Button btnClose;
     }
 }

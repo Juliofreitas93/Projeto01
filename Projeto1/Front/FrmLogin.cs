@@ -39,7 +39,7 @@ namespace Projeto1
             using (var context = new DataContext())
             {
                var user = context.Users.SingleOrDefault(u=> u.Email == txtEmail.Text);
-                if (user != null && VerificarSenha(strpassword, user.Password))
+                if (user != null && VerificarSenha(strpassword, user.Password!))
                 {                   
                     MessageBox.Show("Login realizado com sucesso!", "Bem vindo", MessageBoxButtons.OK, MessageBoxIcon.None);
                     LimparCampos();
