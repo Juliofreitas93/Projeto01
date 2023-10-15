@@ -61,6 +61,7 @@
             Controls.Add(btnEstoque);
             Name = "FrmMenu";
             Text = "Menu Inicial";
+            WindowState = FormWindowState.Maximized;
             ResumeLayout(false);
         }
 

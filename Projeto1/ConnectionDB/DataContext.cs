@@ -23,6 +23,6 @@ namespace Projeto1.ConnectionDB
             modelBuilder.Configurations.Add(new EstoqueMap());
             modelBuilder.Configurations.Add(new DeparmentMap());
             modelBuilder.Configurations.Add(new UsersMap());
-        } 
+        }
     }
 }

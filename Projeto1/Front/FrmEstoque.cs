@@ -42,9 +42,57 @@ namespace Projeto1
             dataGridView1.Columns["Unit"].HeaderText = "Unidades";
             dataGridView1.Columns["Unit"].Width = 80;
 
-            dataGridView1.Columns["IdDepartment"].HeaderText = "Departamento ID";
-            dataGridView1.Columns["IdDepartment"].Width = 120;
+            dataGridView1.Columns["Department"].HeaderText = "Departamento";
+            dataGridView1.Columns["Department"].Width = 120;
 
+        }
+
+        private void AddToolStripButton_Click(object sender, EventArgs e)
+        {
+            var id = 0;
+            using (var frm = new FrmCadastroProduto(id))
+                frm.ShowDialog();
+            using (var context = new DataContext())
+            {
+                dataGridView1.DataSource = (from Estoque
+                                            in context.Estoque
+                                            select Estoque).ToList();
+            }
+
+        }
+
+        private void AlterToolStripButton2_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+            using (var frm = new FrmCadastroProduto(id))
+                frm.ShowDialog();
+
+            using (var context = new DataContext())
+            {
+                dataGridView1.DataSource = (from Estoque
+                                            in context.Estoque
+                                            select Estoque).ToList();
+            }
+        }
+
+        private void ConsultToolStripButton3_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+            using (var frm = new FrmCadastroProduto(id, "v"))
+                frm.ShowDialog();
+        }      
+
+        private void DeltoolStripButton1_Click(object sender, EventArgs e)
+        {
+            var id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["ID"].Value);
+            using (var frm = new FrmCadastroProduto(id, "e"))
+                frm.ShowDialog();
+            using (var context = new DataContext())
+            {
+                dataGridView1.DataSource = (from Estoque
+                                            in context.Estoque
+                                            select Estoque).ToList();
+            }
         }
     }
 }

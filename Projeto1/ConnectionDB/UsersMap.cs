@@ -12,12 +12,12 @@ namespace Projeto1.ConnectionDB
     {
         public UsersMap()
         {
-            ToTable("User");
+            ToTable("Table_User");
             HasKey(x => x.IdUser);
             Property(x => x.Name).HasColumnName("Name_User").HasColumnType("varchar").HasMaxLength(100);
             Property(x => x.Email).HasColumnName("Email_User").HasColumnType("varchar").HasMaxLength(150);
             Property(x => x.Deparment).HasColumnName("Department").HasColumnType("varchar").HasMaxLength(150);
-            Property(x => x.Password).HasColumnName("Password_User").HasColumnType("varchar").HasMaxLength(20);
+            Property(x => x.Password).HasColumnName("Password_User").HasColumnType("varchar").HasMaxLength(120);
             Property(x => x.DataCreat).HasColumnName("Data_Created").HasColumnType("datetime");
             Property(x => x.DataModified).HasColumnName("Data_Modified").HasColumnType("datetime");           
         }

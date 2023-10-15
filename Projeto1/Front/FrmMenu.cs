@@ -15,12 +15,14 @@ namespace Projeto1
         {
             using (var frm = new FrmEstoque())
                 frm.ShowDialog();
+            this.Hide();
         }
 
         private void btnReport_Click(object sender, EventArgs e)
         {
             using (var frm = new FrmReport())
                 frm.ShowDialog();
+            this.Hide();
         }
     }
 

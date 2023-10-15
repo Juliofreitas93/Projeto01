@@ -119,6 +119,7 @@
             bntReturn.TabIndex = 9;
             bntReturn.Text = "Voltar";
             bntReturn.UseVisualStyleBackColor = true;
+            bntReturn.Click += bntReturn_Click;
             // 
             // lblId
             // 
@@ -128,6 +129,7 @@
             lblId.Size = new Size(21, 15);
             lblId.TabIndex = 10;
             lblId.Text = "ID:";
+            lblId.Visible = false;
             // 
             // txtId
             // 
@@ -136,6 +138,7 @@
             txtId.Name = "txtId";
             txtId.Size = new Size(100, 23);
             txtId.TabIndex = 11;
+            txtId.Visible = false;
             // 
             // cmbDepartment
             // 

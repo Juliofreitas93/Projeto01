@@ -37,7 +37,8 @@
             AlterToolStripButton2 = new ToolStripButton();
             toolStripSeparator3 = new ToolStripSeparator();
             toolStripSeparator4 = new ToolStripSeparator();
-            DelToolStripButton3 = new ToolStripButton();
+            ConsultToolStripButton3 = new ToolStripButton();
+            DeltoolStripButton1 = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             // toolStrip1
             // 
-            toolStrip1.Items.AddRange(new ToolStripItem[] { AddToolStripButton, toolStripSeparator1, toolStripSeparator2, AlterToolStripButton2, toolStripSeparator3, toolStripSeparator4, DelToolStripButton3 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { AddToolStripButton, toolStripSeparator1, toolStripSeparator2, AlterToolStripButton2, toolStripSeparator3, toolStripSeparator4, ConsultToolStripButton3, DeltoolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(800, 25);
@@ -69,6 +70,7 @@
             AddToolStripButton.Name = "AddToolStripButton";
             AddToolStripButton.Size = new Size(75, 22);
             AddToolStripButton.Text = "Adiconar";
+            AddToolStripButton.Click += AddToolStripButton_Click;
             // 
             // toolStripSeparator1
             // 
@@ -87,6 +89,7 @@
             AlterToolStripButton2.Name = "AlterToolStripButton2";
             AlterToolStripButton2.Size = new Size(62, 22);
             AlterToolStripButton2.Text = "Alterar";
+            AlterToolStripButton2.Click += AlterToolStripButton2_Click;
             // 
             // toolStripSeparator3
             // 
@@ -98,25 +101,38 @@
             toolStripSeparator4.Name = "toolStripSeparator4";
             toolStripSeparator4.Size = new Size(6, 25);
             // 
-            // DelToolStripButton3
+            // ConsultToolStripButton3
             // 
-            DelToolStripButton3.Image = (Image)resources.GetObject("DelToolStripButton3.Image");
-            DelToolStripButton3.ImageTransparentColor = Color.Magenta;
-            DelToolStripButton3.Name = "DelToolStripButton3";
-            DelToolStripButton3.Size = new Size(62, 22);
-            DelToolStripButton3.Text = "Excluir";
+            ConsultToolStripButton3.Image = (Image)resources.GetObject("ConsultToolStripButton3.Image");
+            ConsultToolStripButton3.ImageTransparentColor = Color.Magenta;
+            ConsultToolStripButton3.Name = "ConsultToolStripButton3";
+            ConsultToolStripButton3.Size = new Size(76, 22);
+            ConsultToolStripButton3.Text = "Visualizar";
+            ConsultToolStripButton3.Click += ConsultToolStripButton3_Click;
+            // 
+            // DeltoolStripButton1
+            // 
+            DeltoolStripButton1.Image = (Image)resources.GetObject("DeltoolStripButton1.Image");
+            DeltoolStripButton1.ImageTransparentColor = Color.Magenta;
+            DeltoolStripButton1.Name = "DeltoolStripButton1";
+            DeltoolStripButton1.Size = new Size(62, 22);
+            DeltoolStripButton1.Text = "Excluir";
+            DeltoolStripButton1.Click += DeltoolStripButton1_Click;
             // 
             // FrmEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             ClientSize = new Size(800, 450);
             Controls.Add(toolStrip1);
             Controls.Add(dataGridView1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FrmEstoque";
-            StartPosition = FormStartPosition.CenterScreen;
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.WindowsDefaultBounds;
             Text = "Estoque";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             toolStrip1.ResumeLayout(false);
@@ -135,6 +151,7 @@
         private ToolStripButton AlterToolStripButton2;
         private ToolStripSeparator toolStripSeparator3;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton DelToolStripButton3;
+        private ToolStripButton ConsultToolStripButton3;
+        private ToolStripButton DeltoolStripButton1;
     }
 }

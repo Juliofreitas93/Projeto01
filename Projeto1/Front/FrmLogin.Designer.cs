@@ -85,6 +85,7 @@
             btnExit.Text = "Sair";
             btnExit.UseMnemonic = false;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnLogin
             // 

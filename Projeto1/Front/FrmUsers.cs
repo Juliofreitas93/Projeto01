@@ -36,6 +36,7 @@ namespace Projeto1
                     cmbDepartment.DataSource = listaDepartments.ToList();
                     cmbDepartment.DisplayMember = "Name";
                     cmbDepartment.ValueMember = "IdDepartment";
+                    cmbDepartment.SelectedIndex = -1;
                 }
             }
             catch (Exception ex)
@@ -57,10 +58,6 @@ namespace Projeto1
                     var User = context.Users.Find(id);
                     if (User != null)
                     {
-                        txtName.Text = User.Name;
-                        txtEmail.Text = User.Email;
-                        TxtPassword.Text = User.Password;
-                        cmbDepartment.SelectedValue = User.Deparment;
                     }
                 }
             }
@@ -80,35 +77,59 @@ namespace Projeto1
         private bool Salvar()
         {
             var user = new Users();
-
-            user.IdUser = Convert.ToInt32("0" + txtId.Text);
-            user.Name = txtName.Text;
-            user.Email = txtEmail.Text;
-            user.Password = BD.Criptografar(TxtPassword.Text);
-            user.Deparment = Convert.ToString(cmbDepartment.SelectedValue);
-            user.DataCreat = DateTime.Now;
-            user.DataModified = DateTime.Now;
-
-            try
-            {
-                using (var context = new DataContext())
+            using (var context = new DataContext())
+                try
                 {
+                    user.IdUser = Convert.ToInt32("0" + txtId.Text);
+                    user.Name = txtName.Text;
+                    user.Email = txtEmail.Text;
+                    user.Password = BD.Criptografar(TxtPassword.Text);
+                    user.Deparment = Convert.ToString(cmbDepartment.SelectedValue);
+                    user.DataCreat = DateTime.Now;
+                    user.DataModified = DateTime.Now;
+
+                    if (string.IsNullOrEmpty(user.Name))
+                    {
+                        MessageBox.Show("Nome não pode estar em branco!", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return false;
+                    }
+                    if (string.IsNullOrEmpty(user.Email))
+                    {
+                        MessageBox.Show("Email não pode estar em branco!", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    if (string.IsNullOrEmpty(user.Deparment))
+                    {
+                        MessageBox.Show("Email não pode estar em branco!", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    if (string.IsNullOrEmpty(user.Password))
+                    {
+                        MessageBox.Show("Email não pode estar em branco!", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                     if (user.IdUser == 0)
                         context.Users.Add(user);
                     else
                         context.Entry(user).State = System.Data.Entity.EntityState.Modified;
 
                     context.SaveChanges();
+                    MessageBox.Show("CADASTRO REALIZADO COM SUCESSO!", "Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
-
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Falha ao salvar.\n" + ex.Message);
-                return false;
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Falha ao salvar.\n" + ex.Message);
+                    return false;
+                }
 
+
+
+        }
+
+        private void bntReturn_Click(object sender, EventArgs e)
+        {
+            using (var frm = new FrmLogin())
+                frm.ShowDialog();
+            this.Hide();
         }
     }
 }
